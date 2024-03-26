@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "data-ingestion-solution"
+version = "0.1.0"
+description = ""
+authors = ["gabrielgarciae <gabrielgevangelista@hotmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.0"
+uvicorn = "^0.29.0"
+faker = "^24.4.0"
+pandas = "^2.2.1"
+requests = "^2.31.0"
+contracts = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
