@@ -2,18 +2,19 @@ import boto3
 from botocore.exceptions import NoCredentialsError
 import sys
 import os
+from dotenv import load_dotenv
 
 # Classe de configuração da AWS baseada em variável de ambiente
 # Suponha que você tenha uma variável de ambiente chamada "MINHA_VARIAVEL"
 # Você pode acessar seu valor usando a função os.environ.get()
 
-
+load_dotenv()
 class S3Client:
     def __init__(self):
         self._envs = {
             "aws_access_key_id": os.environ.get("AWS_ACCESS_KEY_ID"),
             "aws_secret_access_key": os.environ.get("AWS_SECRET_ACCESS_KEY"),
-            "region_name": os.environ.get("AWS_REGION", "us-west-1"),  # Usando um valor padrão se a variável não estiver definida
+            "region_name": os.environ.get("AWS_REGION", "us-east-1"),  # Usando um valor padrão se a variável não estiver definida
             "s3_bucket": os.environ.get("S3_BUCKET_NAME"),
             "datalake": os.environ.get("DELTA_LAKE_S3_PATH"),
         }

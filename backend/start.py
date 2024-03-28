@@ -1,9 +1,13 @@
 from datasource.api import APICollector
 from contracts.schema import CompraSchema
-from aws import S3Client
-
 import schedule
 import time
+
+import sys
+import os
+from aws.client import S3Client
+# Adicionando o diretório raiz ao sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 schema = CompraSchema
 aws = S3Client()
@@ -13,8 +17,8 @@ def apiCollector(schema, aws, repeat):
     print("Executei")
     return
 
-schedule.every(1).minute.do(apiCollector, schema, aws, 50)
+schedule.every(1).minute.do(apiCollector, schema, aws, 10)
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(10)
