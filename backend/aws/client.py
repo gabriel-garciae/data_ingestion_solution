@@ -3,6 +3,7 @@ from botocore.exceptions import NoCredentialsError
 import sys
 import os
 
+# Classe de configuração da AWS baseada em variável de ambiente
 # Suponha que você tenha uma variável de ambiente chamada "MINHA_VARIAVEL"
 # Você pode acessar seu valor usando a função os.environ.get()
 
