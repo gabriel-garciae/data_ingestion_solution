@@ -3,8 +3,6 @@ from datetime import date
 from enum import Enum
 
 
-#pydantic, seleciona datatype especifios, como o email que valida o @
-
 class CategoriaEnum(str, Enum):
     categoria_1 = "Categoria 1"
     categoria_2 = "Categoria 2"
